@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Kaptcha</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+	<servlet-name>kaptcha</servlet-name> 
+	<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class> 
+	<init-param>
+		<description>图片边框，合法值：yes，no</description>
+		<param-name>kaptcha.border</param-name>
+		<param-value>yes</param-value>
+	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>kaptcha</servlet-name>
+  	<url-pattern>/randomcode.jpg</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
